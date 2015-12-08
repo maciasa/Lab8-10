@@ -1,0 +1,27 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Username</th>
+        <th>Company Name</th>
+            <th>job description</th></tr>
+
+
+
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/company/?comp_id=<%= rs[i].comp_id%>">
+                   <%= rs[i].lname %><%= rs[i].fname %></a></td>
+            <td><a href><%= rs[i].cname%></a></td>
+            <td><a href><%= rs[i].description %></a></td>
+        </tr>
+
+        <% } %>
+    </table>
+    <% } else { %>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+
+</div>

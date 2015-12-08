@@ -1,0 +1,21 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Min</th>
+            <th>Max</th>
+            <th>avg</th>
+
+            <th>total</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href><%= rs[i].mingpa %></a></td>
+            <td><a href><%= rs[i].maxgpa %></a></td>
+            <td><a href><%= rs[i].avggpa %></a></td>
+            <td><a href><%= rs[i].totalsch %></a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>
