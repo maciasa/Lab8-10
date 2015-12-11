@@ -33,4 +33,28 @@ exports.GetByID = function(sch_id, callback) {
             callback(false, result);
         }
     );
-}
+    exports.Insert = function(school_info, callback) {
+        console.log(school_info);
+        var dynamic_query = 'INSERT INTO account (schoolname, zip, street, city, state) VALUES (' +
+            '\'' + school_info.schoolname + '\', ' +
+            '\'' + school_info.zip + '\', ' +
+            '\'' + school_info.street + '\', ' +
+            '\'' + school_info.city + '\'' +
+            '\'' + school_info.state + '\'' +
+            ');';
+        console.log("test");
+        console.log(dynamic_query);
+        connection.query(dynamic_query,
+            function (err, result) {
+
+
+                if (err) {
+                    console.log(err);
+                    callback(true);
+                    return;
+                }
+                callback(false, result);
+            }
+        )
+    };
+};

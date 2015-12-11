@@ -1,0 +1,9 @@
+<% if(rs.length > 0) { %>
+Min GPA: <%= rs[0].mingpa %><br />
+Max GPA: <%= rs[0].maxgpa %>
+Average GPA: <%= rs[0].avggpa %>
+Total students: <%= rs[0].totalsch %>
+
+<% } else { %>
+No account matched this school id <%= sch_id %>.
+<% } %>

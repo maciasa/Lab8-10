@@ -8,8 +8,9 @@
         <th>State</th></tr>
         <% for (var i=0; rs.length > i; i++) { %>
         <tr>
-            <td><a href><%= rs[i].schname %></a></td> <td><a href><%= rs[i].zip %></a></td> <td><a href><%= rs[i].street%></a></td>
-                   <td><a href><%= rs[i].city %></a></td> <td><a href><%= rs[i].state %></a></td>
+            <td><a href="/school/?sch_id=<%= rs[i].sch_id %>"><%= rs[i].schname %></a></td> <td><a href="/school/?sch_id=<%= rs[i].sch_id %>">
+                    <%= rs[i].zip %></a></td> <td><a href="/school/?sch_id=<%= rs[i].sch_id %>"><%= rs[i].street%></a></td>
+                   <td><a href="/school/?sch_id=<%= rs[i].sch_id %>"><%= rs[i].city %></a></td> <td><a href="/school/?sch_id=<%= rs[i].sch_id %>"><%= rs[i].state %></a></td>
         </tr>
         <% } %>
     </table>

@@ -8,10 +8,10 @@
             <th>total</th></tr>
         <% for (var i=0; rs.length > i; i++) { %>
         <tr>
-            <td><a href><%= rs[i].mingpa %></a></td>
-            <td><a href><%= rs[i].maxgpa %></a></td>
-            <td><a href><%= rs[i].avggpa %></a></td>
-            <td><a href><%= rs[i].totalsch %></a></td>
+            <td><a href="/company/?comp_id=<%= rs[i].comp_id %>"><%= rs[i].mingpa %></a></td>
+            <td><a href="/company/?comp_id=<%= rs[i].comp_id %>"><%= rs[i].maxgpa %></a></td>
+            <td><a href="/company/?comp_id=<%= rs[i].comp_id %>"><%= rs[i].avggpa %></a></td>
+            <td><a href="/company/?comp_id=<%= rs[i].comp_id %>"><%= rs[i].totalsch %></a></td>
         </tr>
         <% } %>
     </table>

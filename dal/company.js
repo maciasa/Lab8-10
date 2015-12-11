@@ -20,21 +20,45 @@ exports.GetAll = function(callback) {
 
 exports.GetByID = function(comp_id, callback) {
     console.log(comp_id);
-    var query = 'SELECT * FROM companies WHERE comp_id=' + comp_id;
+    var query = 'SELECT * FROM companiesgpa WHERE comp_id=' + comp_id;
     console.log(query);
     connection.query(query,
         function (err, result) {
-            if (err) {
+            if(err) {
                 console.log(err);
                 callback(true);
                 return;
             }
             callback(false, result);
         }
-    )
+    );
+    exports.Insert = function(school_info, callback) {
+        console.log(account_info);
+        var dynamic_query = 'INSERT INTO account (schoolname, zip, street, city, state) VALUES (' +
+            '\'' + school_info.schoolname + '\', ' +
+            '\'' + school_info.zip + '\', ' +
+            '\'' + school_info.street + '\', ' +
+            '\'' + school_info.city + '\'' +
+            '\'' + school_info.state + '\'' +
+            ');';
+        console.log("test");
+        console.log(dynamic_query);
+        connection.query(dynamic_query,
+            function (err, result) {
+
+
+                if (err) {
+                    console.log(err);
+                    callback(true);
+                    return;
+                }
+                callback(false, result);
+            }
+        )
+    };
 };
 
-exports.Getcompany = function(comp_id, callback) {
+/*exports.Getcompany = function(comp_id, callback) {
     console.log(comp_id);
     var query = 'select user.fname, user.lname, companies.cname, jobs.description ' +
     'FROM user join apply on user.user_id = apply.user_id join companies on companies.comp_id = apply.comp_id ' +
@@ -49,7 +73,7 @@ exports.Getcompany = function(comp_id, callback) {
             }
             callback(false, result);
         });
-};
+};*/
 
 /*exports.Getgpa = function(comp_id, callback) {
     console.log(comp_id);

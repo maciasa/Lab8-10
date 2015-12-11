@@ -1,0 +1,9 @@
+<% if(rs.length > 0) { %>
+School Name: <%= rs[0].schname %><br />
+Zip: <%= rs[0].zip %>
+Street: <%= rs[0].street %>
+City: <%= rs[0].city %>
+State: <%= rs[0].state %>
+<% } else { %>
+No account matched this school id <%= sch_id %>.
+<% } %>

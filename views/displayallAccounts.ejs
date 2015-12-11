@@ -4,7 +4,7 @@
         <tr><th>Name</th></tr>
         <% for (var i=0; rs.length > i; i++) { %>
         <tr>
-            <td><a href="/user/?user_id=<%= rs[i].user_id %>"> <%= rs[i].lname %>, <%= rs[i].fname %></a></td>
+            <td><a href="/users/?user_id=<%= rs[i].user_id %>"> <%= rs[i].lname %>, <%= rs[i].fname %></a></td>
         </tr>
         <% } %>
     </table>
