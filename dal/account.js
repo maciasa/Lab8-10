@@ -100,11 +100,11 @@ exports.GetByID = function(user_id, callback) {
 
 }
 
-exports.Getcompany = function(user_id, callback) {
+/*exports.Getcompany = function(user_id, callback) {
     console.log(user_id);
     var query = 'select user.fname, user.lname, companies.cname, jobs.description ' +
         'FROM user join apply on user.user_id = apply.user_id join companies on companies.comp_id = apply.comp_id ' +
-        'left join jobs on jobs.comp_id = companies.comp_id=' + user_id;
+        'left join jobs on jobs.comp_id = companies.comp_id WHERE companies.comp_id =' + user_id;
     console.log(query);
     connection.query(query,
         function (err, result) {
@@ -115,4 +115,4 @@ exports.Getcompany = function(user_id, callback) {
             }
             callback(false, result);
         });
-};
+};*/

@@ -1,0 +1,7 @@
+<% if(rs.length > 0) { %>
+User Name: <%= rs[0].schname %><br />
+Company: <%= rs[0].zip %>
+Desription: <%= rs[0].street %>
+<% } else { %>
+No account matched this user id <%= user_id %>.
+<% } %>

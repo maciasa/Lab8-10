@@ -14,14 +14,26 @@ router.get('/all', function(req, res) {
 });
 
 router.get('/info', function(req, res) {
-    accountDal.Getcompany(function (err, result) {
+    accountDal.Getcompany(req.query.user_id, function (err, result) {
             if (err) throw err;
             // res.send(result);
             console.log(result);
-            res.render('displaycompanyinfo.ejs', {rs: result});
+            res.render('displaycompanyinfo.ejs', {rs: result, user_id: req.query.user_id});
         }
     );
 });
+
+router.get('/', function (req, res) {
+    accountDal.GetByID(req.query.user_id, function (err, result) {
+            if (err) throw err;
+            //res.send(result);
+            console.log(result);
+            res.render('usercompanyinfo.ejs', {rs: result, user_id: req.query.user_id});
+        }
+    );
+
+});
+
 router.get('/', function (req, res) {
   accountDal.GetByID(req.query.user_id, function (err, result) {
         if (err) throw err;
