@@ -9,10 +9,10 @@
 
         <% for (var i=0; rs.length > i; i++) { %>
         <tr>
-            <td><a href="/company/?comp_id=<%= rs[i].comp_id%>">
+            <td><a href="/company/usercomp/?comp_id=<%= rs[i].comp_id%>">
                    <%= rs[i].lname %><%= rs[i].fname %></a></td>
-            <td><a href="/company/?comp_id=<%= rs[i].comp_id%>"><%= rs[i].cname%></a></td>
-            <td><a href="/company/?comp_id=<%= rs[i].comp_id%>"><%= rs[i].description %></a></td>
+            <td><a href="/company/usercomp/?comp_id=<%= rs[i].comp_id%>"><%= rs[i].cname%></a></td>
+            <td><a href="/company/usercomp/?comp_id=<%= rs[i].comp_id%>"><%= rs[i].description %></a></td>
         </tr>
 
         <% } %>

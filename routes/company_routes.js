@@ -3,25 +3,16 @@ var router = express.Router();
 var companyDal   = require('../dal/company');
 
 router.get('/info', function(req, res) {
-    companyDal.Getcompany(req.query.comp_id, function (err, result) {
+    companyDal.Getcompany(function (err, result) {
             if (err) throw err;
 
         console.log(result);
-            res.render('displaycompanyinfo.ejs', {rs: result, comp_id: req.query.comp_id});
+            res.render('displaycompanyinfo.ejs', {rs: result});
         }
     );
 });
 
-router.get('/', function (req, res) {
-    companyDal.GetByID(req.query.comp_id, function (err, result) {
-        console.log(result);
 
-            res.render('companyid.ejs', {rs: result, comp_id: req.query.comp_id});
-        }
-    );
-
-
-});
 
 router.get('/cform', function(req, res, next){
     res.render('company.ejs', {subtitle: "test3"});
@@ -47,6 +38,20 @@ router.get('/comp_gpa', function (req, res) {
         res.render('companyview.ejs', {rs: result, comp_id: req.query.comp_id});
     }
     );
+});
+
+router.get('/usercomp', function (req, res) {
+    console.log(req.query);
+    console.log(req.query.comp_id);
+
+    companyDal.Getcompid(req.query.comp_id, function (err, result) {
+            console.log(result);
+
+            res.render('companyid.ejs', {rs: result, comp_id: req.query.comp_id});
+        }
+    );
+
+
 });
 
 router.get('/', function (req, res) {
